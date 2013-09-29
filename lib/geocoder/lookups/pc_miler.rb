@@ -8,6 +8,16 @@ module Geocoder
       
       DIGEST = OpenSSL::Digest::Digest.new("sha256")
       BASE = "http://pcmiler.alk.com/APIs/REST/v0.5/Service.svc"
+      
+      def self.hash_address(address)
+        if address =~ /(.*), (.*), (.*) ((\d|-)*)/
+          { street: $1, city: $2, state: $3, postcode: $4 }
+        elsif address =~ /(.*), (.*), (.*)/
+          { street: $1, city: $2, state: $3 }
+        else
+          { }
+        end
+      end
 
       def self.generate_hash(request, time_stamp)
         computed_hash = OpenSSL::HMAC.digest(DIGEST, instance.password, request + time_stamp)
@@ -37,18 +47,23 @@ module Geocoder
         ret
       end
 
-      def self.coordinate(options={})
-        locations(options).map{|loc| 
-          lat = loc["Coords"]["Lat"].to_f rescue nil
-          lon = loc["Coords"]["Lon"].to_f rescue nil
-          [ lat, lon ]
-        }.first
+      def self.coordinates(address)
+        options = hash_address(address)
+        unless options.empty?
+          locations(options).map{|loc| 
+            lat = loc["Coords"]["Lat"].to_f rescue nil
+            lon = loc["Coords"]["Lon"].to_f rescue nil
+            [ lat, lon ]
+          }.first
+        else
+          nil
+        end
       end
 
 
       def self.mileage(ori, dest)
-        ori = coordinate(ori)
-        dest = coordinate(dest)
+        ori = coordinates(ori)
+        dest = coordinates(dest)
         uri = URI::parse("#{BASE}/mileage")
 
         body = {

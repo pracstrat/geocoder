@@ -2,15 +2,17 @@ require 'awesome_print'
 require "geocoder/configuration"
 require "geocoder/lookups/base"
 require "geocoder/lookups/pc_miler"
+require 'active_support'
 
 module Geocoder
 
   def self.coordinates(address)
-    ap lookup
+    lookup.coordinates(address)
   end
 
   def self.lookup
-    Geocoder::Lookup.constantize(instance.lookup)
+    class_name = ActiveSupport::Inflector.classify(instance.lookup)
+    ActiveSupport::Inflector.constantize("Geocoder::Lookup::#{class_name}")
   end
 
   def self.instance
