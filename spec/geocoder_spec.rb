@@ -15,12 +15,12 @@ describe "Geocoder" do
   end
 
   it ".locations" do
-    locations = Geocoder.locations("street" => "528 Marie Dr", "city" => "South Holland", "state" => "IL", "postcode" => 60473)
+    locations = Geocoder.locations("528 Marie Dr, South Holland, IL 60473")
     locations.first["Coords"].should == {
       "Lat" => "41.594123",
       "Lon" => "-87.603162"
     }
-    Geocoder.locations("street" => "528 Marie").should be_empty
-    Geocoder.locations("street" => "Marie Dr", "city" => "South Holland", "state" => "IL", "list" => 10).size.should eq(2)
+    Geocoder.locations("528 Marie").should be_nil
+    Geocoder.locations("Marie Dr, South Holland, IL").size.should eq(2)
   end
 end
