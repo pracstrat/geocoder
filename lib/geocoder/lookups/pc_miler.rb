@@ -5,10 +5,10 @@ require 'json'
 module Geocoder
   module Lookup
     class PcMiler < Base
-      
+
       DIGEST = OpenSSL::Digest::Digest.new("sha256")
       BASE = "http://pcmiler.alk.com/APIs/REST/v0.5/Service.svc"
-      
+
       def self.hash_address(address)
         # I am not suggesting this is the best way. I think the best way actually is to change Company.address inside of TZ!
         if address =~ /(.*), (.*), (.*) ((\d|-)*)/
@@ -51,7 +51,7 @@ module Geocoder
       def self.coordinates(address)
         options = hash_address(address)
         unless options.empty?
-          locations(options).map{|loc| 
+          locations(options).map{|loc|
             lat = loc["Coords"]["Lat"].to_f rescue nil
             lon = loc["Coords"]["Lon"].to_f rescue nil
             [ lat, lon ]
