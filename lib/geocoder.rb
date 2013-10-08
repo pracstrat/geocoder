@@ -15,6 +15,14 @@ module Geocoder
     ActiveSupport::Inflector.constantize("Geocoder::Lookup::#{class_name}")
   end
 
+  def self.locations(options={})
+    lookup.locations(options)
+  end
+
+  def self.distance(ori, dest)
+    lookup.distance(ori, dest)
+  end
+
   def self.instance
     Geocoder::Configuration.instance
   end
