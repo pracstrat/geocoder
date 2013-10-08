@@ -15,7 +15,8 @@ module Geocoder
     ActiveSupport::Inflector.constantize("Geocoder::Lookup::#{class_name}")
   end
 
-  def self.locations(options={})
+  def self.locations(address)
+    options = lookup.hash_address(address)
     lookup.locations(options)
   end
 
