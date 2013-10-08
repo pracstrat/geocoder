@@ -12,9 +12,9 @@ module Geocoder
       def self.hash_address(address)
         # I am not suggesting this is the best way. I think the best way actually is to change Company.address inside of TZ!
         if address =~ /(.*), (.*), (.*) ((\d|-)*)/
-          { street: $1, city: $2, state: $3, postcode: $4 }
+          { street: $1, city: $2, state: $3, postcode: $4, list: 10 }
         elsif address =~ /(.*), (.*), (.*)/
-          { street: $1, city: $2, state: $3 }
+          { street: $1, city: $2, state: $3 , list: 10}
         else
           { }
         end
