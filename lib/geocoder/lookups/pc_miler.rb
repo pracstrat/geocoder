@@ -31,7 +31,8 @@ module Geocoder
         { "Authorization" => generate_hash(uri.path, httpdate), "authDate" => httpdate }
       end
 
-      def self.locations(options={})
+      def self.locations(address)
+        options = hash_address(address)
         return nil if options.empty?
         ret = []
         query = options.map{|key, value| "#{key}=#{CGI::escape(value.to_s)}" }.join("&")
@@ -49,9 +50,9 @@ module Geocoder
       end
 
       def self.coordinates(address)
-        options = hash_address(address)
-        unless options.empty?
-          locations(options).map{|loc|
+        return nil if address.empty?
+        unless locations(address).nil?
+          locations(address).map{|loc|
             lat = loc["Coords"]["Lat"].to_f rescue nil
             lon = loc["Coords"]["Lon"].to_f rescue nil
             [ lat, lon ]
@@ -60,7 +61,6 @@ module Geocoder
           nil
         end
       end
-
 
       def self.mileage(ori, dest)
         ori = coordinates(ori)

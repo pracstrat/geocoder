@@ -20,6 +20,7 @@ describe "Geocoder" do
       "Lat" => "41.594123",
       "Lon" => "-87.603162"
     }
+    ap locations
     Geocoder.locations("528 Marie").should be_nil
     Geocoder.locations("Marie Dr, South Holland, IL").size.should eq(2)
   end
