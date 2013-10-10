@@ -16,7 +16,7 @@ RSpec.configure do |config|
 end
 
 Geocoder.configure({
-  lookup: :google_map,
+  lookup: :pc_miler,
   username: "R2R",
   password: "R2R103338",
   account: "R2RIntermodal_test"

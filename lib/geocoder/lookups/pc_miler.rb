@@ -41,9 +41,10 @@ module Geocoder
           Net::HTTP.start(uri.host, uri.port) do |http|
             response = http.request_get(uri.request_uri, headers(uri))
             ret = JSON.parse(response.body) if response.code.to_i == 200
-            locations = ret.compact.uniq.collect{|ret|
-              address_str = "#{ret['Address']['StreetAddress']}, #{ret['Address']['City']}, #{ret['Address']['State']} #{ret['Address']['Zip']}, USA"
-              Location.new({:address => address_str, lng: ret['Coords']['Lon'].to_f, lat: ret['Coords']['Lat'].to_f})
+            ap ret
+            locations = ret.compact.uniq.collect{|whole_Address|
+              address_str = "#{whole_Address['Address']['StreetAddress']}, #{whole_Address['Address']['City']}, #{whole_Address['Address']['State']} #{whole_Address['Address']['Zip']}, USA"
+              Location.new({:address => address_str, lng: whole_Address['Coords']['Lon'].to_f, lat: whole_Address['Coords']['Lat'].to_f})
             }
           end
         rescue Exception => ex
