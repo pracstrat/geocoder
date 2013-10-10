@@ -9,9 +9,7 @@ describe "Geocoder" do
   it '.distance' do
     from = "26664 Baseline Rd, Elwood, IL 60421"
     to = "7000 West 71st Street, Chicago, IL 60638"
-    puts ">>>>>>>>>>>>>>>>>>>>>>>>>focus here ***********************"
     Geocoder.distance(from, to).should eq(68879.92)
-    puts "<<<<<<<<<<<<<<<<<<<<<<<<<focus here ***********************"
   end
 
   it ".locations" do
