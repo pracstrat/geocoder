@@ -26,8 +26,6 @@ module Geocoder
               response = http.get(url)
               json = JSON.parse(response.body)
               if json["status"]=="OK"
-                ap "222"
-                ap json
                 ret = json["routes"][0]["legs"][0]["distance"]["value"].to_i
                 return ret
               else

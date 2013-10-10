@@ -16,7 +16,6 @@ describe "Geocoder" do
 
   it ".locations" do
     locations = Geocoder.locations("528 Marie Dr, South Holland, IL 60473")
-    ap locations
     locations.first.lng.should == -87.603162
     locations.first.lat.should == 41.594123
 
