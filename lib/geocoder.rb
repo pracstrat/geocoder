@@ -2,6 +2,8 @@ require 'awesome_print'
 require "geocoder/configuration"
 require "geocoder/lookups/base"
 require "geocoder/lookups/pc_miler"
+require "geocoder/lookups/location"
+require "geocoder/lookups/google_map"
 require 'active_support'
 
 module Geocoder
@@ -16,8 +18,7 @@ module Geocoder
   end
 
   def self.locations(address)
-    options = lookup.hash_address(address)
-    lookup.locations(options)
+    lookup.locations(address)
   end
 
   def self.distance(ori, dest)

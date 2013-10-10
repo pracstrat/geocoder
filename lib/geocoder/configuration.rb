@@ -11,14 +11,14 @@ module Geocoder
   end
 
   class Configuration
-    
+
     include Singleton
-    
+
     OPTIONS = [
       :lookup,
       :username,
       :password,
-      :account    
+      :account
     ]
 
     attr_accessor :data
@@ -43,7 +43,7 @@ module Geocoder
 
     private
     def set_defaults
-      @data[:lookup] = :pc_miler
+      @data[:lookup] = :google_map
       @data[:username] = nil
       @data[:password] = nil
       @data[:account] = nil

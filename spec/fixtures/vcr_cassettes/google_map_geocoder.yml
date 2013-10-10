@@ -1,0 +1,2437 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=Mountain,%20Leakey&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:02 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:02 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain",
+                       "short_name" : "Mountain",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Leakey",
+                       "short_name" : "Leakey",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Real",
+                       "short_name" : "Real",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Texas",
+                       "short_name" : "TX",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "78873",
+                       "short_name" : "78873",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain, Leakey, TX 78873, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 29.7298474,
+                          "lng" : -99.76302
+                       },
+                       "southwest" : {
+                          "lat" : 29.724517,
+                          "lng" : -99.76423029999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 29.727109,
+                       "lng" : -99.763538
+                    },
+                    "location_type" : "GEOMETRIC_CENTER",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 29.7298474,
+                          "lng" : -99.76227616970849
+                       },
+                       "southwest" : {
+                          "lat" : 29.724517,
+                          "lng" : -99.76497413029151
+                       }
+                    }
+                 },
+                 "types" : [ "route" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:02 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=Mountain,%20Leakey,%20TX%2078873,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:03 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:03 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain",
+                       "short_name" : "Mountain",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Leakey",
+                       "short_name" : "Leakey",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Real",
+                       "short_name" : "Real",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Texas",
+                       "short_name" : "TX",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "78873",
+                       "short_name" : "78873",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain, Leakey, TX 78873, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 29.7298474,
+                          "lng" : -99.76302
+                       },
+                       "southwest" : {
+                          "lat" : 29.724517,
+                          "lng" : -99.76423029999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 29.727109,
+                       "lng" : -99.763538
+                    },
+                    "location_type" : "GEOMETRIC_CENTER",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 29.7298474,
+                          "lng" : -99.76227616970849
+                       },
+                       "southwest" : {
+                          "lat" : 29.724517,
+                          "lng" : -99.76497413029151
+                       }
+                    }
+                 },
+                 "types" : [ "route" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:03 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=6454%20East%20Taft,%20East%20Syracuse&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:03 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:03 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "6454",
+                       "short_name" : "6454",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "East Taft Road",
+                       "short_name" : "E Taft Rd",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "East Syracuse",
+                       "short_name" : "East Syracuse",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Cicero",
+                       "short_name" : "Cicero",
+                       "types" : [ "administrative_area_level_3", "political" ]
+                    },
+                    {
+                       "long_name" : "Onondaga",
+                       "short_name" : "Onondaga",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "13057",
+                       "short_name" : "13057",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "6454 East Taft Road, East Syracuse, NY 13057, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 43.1267489,
+                       "lng" : -76.074855
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 43.1280978802915,
+                          "lng" : -76.07350601970849
+                       },
+                       "southwest" : {
+                          "lat" : 43.1253999197085,
+                          "lng" : -76.07620398029151
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:03 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=6454%20East%20Taft%20Road,%20East%20Syracuse,%20NY%2013057,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:03 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:03 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "6454",
+                       "short_name" : "6454",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "East Taft Road",
+                       "short_name" : "E Taft Rd",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "East Syracuse",
+                       "short_name" : "East Syracuse",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Cicero",
+                       "short_name" : "Cicero",
+                       "types" : [ "administrative_area_level_3", "political" ]
+                    },
+                    {
+                       "long_name" : "Onondaga",
+                       "short_name" : "Onondaga",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "New York",
+                       "short_name" : "NY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "13057",
+                       "short_name" : "13057",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "6454 East Taft Road, East Syracuse, NY 13057, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 43.1267489,
+                       "lng" : -76.074855
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 43.1280978802915,
+                          "lng" : -76.07350601970849
+                       },
+                       "southwest" : {
+                          "lat" : 43.1253999197085,
+                          "lng" : -76.07620398029151
+                       }
+                    }
+                 },
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:03 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=Mountain%20View&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:03 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:03 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain View",
+                       "short_name" : "Mountain View",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Santa Clara",
+                       "short_name" : "Santa Clara",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain View, CA, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 37.4508789,
+                          "lng" : -122.0446721
+                       },
+                       "southwest" : {
+                          "lat" : 37.3565411,
+                          "lng" : -122.1178619
+                       }
+                    },
+                    "location" : {
+                       "lat" : 37.3860517,
+                       "lng" : -122.0838511
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 37.4508789,
+                          "lng" : -122.0446721
+                       },
+                       "southwest" : {
+                          "lat" : 37.3565411,
+                          "lng" : -122.1178619
+                       }
+                    }
+                 },
+                 "types" : [ "locality", "political" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain View",
+                       "short_name" : "Mountain View",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Blue Mountain",
+                       "short_name" : "Blue Mountain",
+                       "types" : [ "administrative_area_level_3", "political" ]
+                    },
+                    {
+                       "long_name" : "Stone",
+                       "short_name" : "Stone",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Arkansas",
+                       "short_name" : "AR",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain View, AR, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 35.8914469,
+                          "lng" : -92.060107
+                       },
+                       "southwest" : {
+                          "lat" : 35.8354379,
+                          "lng" : -92.1576329
+                       }
+                    },
+                    "location" : {
+                       "lat" : 35.8684075,
+                       "lng" : -92.11765210000002
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 35.8914469,
+                          "lng" : -92.060107
+                       },
+                       "southwest" : {
+                          "lat" : 35.8354379,
+                          "lng" : -92.1576329
+                       }
+                    }
+                 },
+                 "types" : [ "locality", "political" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain View",
+                       "short_name" : "Mountain View",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Hawaii",
+                       "short_name" : "Hawaii",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Hawaii",
+                       "short_name" : "HI",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain View, HI, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 19.6091478,
+                          "lng" : -155.0839829
+                       },
+                       "southwest" : {
+                          "lat" : 19.4574839,
+                          "lng" : -155.2582441
+                       }
+                    },
+                    "location" : {
+                       "lat" : 19.5558333,
+                       "lng" : -155.1080556
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 19.6091478,
+                          "lng" : -155.0839829
+                       },
+                       "southwest" : {
+                          "lat" : 19.4574839,
+                          "lng" : -155.2582441
+                       }
+                    }
+                 },
+                 "types" : [ "locality", "political" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain View",
+                       "short_name" : "Mountain View",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Goldsberry",
+                       "short_name" : "Goldsberry",
+                       "types" : [ "administrative_area_level_3", "political" ]
+                    },
+                    {
+                       "long_name" : "Howell",
+                       "short_name" : "Howell",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Missouri",
+                       "short_name" : "MO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "65548",
+                       "short_name" : "65548",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain View, MO 65548, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 37.013057,
+                          "lng" : -91.6696159
+                       },
+                       "southwest" : {
+                          "lat" : 36.9755221,
+                          "lng" : -91.73224410000002
+                       }
+                    },
+                    "location" : {
+                       "lat" : 36.9953322,
+                       "lng" : -91.70375500000002
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 37.013057,
+                          "lng" : -91.6696159
+                       },
+                       "southwest" : {
+                          "lat" : 36.9755221,
+                          "lng" : -91.73224410000002
+                       }
+                    }
+                 },
+                 "types" : [ "locality", "political" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain View",
+                       "short_name" : "Mountain View",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Uinta",
+                       "short_name" : "Uinta",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Wyoming",
+                       "short_name" : "WY",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "82933",
+                       "short_name" : "82933",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain View, WY 82933, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 41.2830109,
+                          "lng" : -110.3170921
+                       },
+                       "southwest" : {
+                          "lat" : 41.265395,
+                          "lng" : -110.348409
+                       }
+                    },
+                    "location" : {
+                       "lat" : 41.2688392,
+                       "lng" : -110.3398785
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 41.2830109,
+                          "lng" : -110.3170921
+                       },
+                       "southwest" : {
+                          "lat" : 41.265395,
+                          "lng" : -110.348409
+                       }
+                    }
+                 },
+                 "types" : [ "locality", "political" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain View",
+                       "short_name" : "Mountain View",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Kiowa",
+                       "short_name" : "Kiowa",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Oklahoma",
+                       "short_name" : "OK",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "73062",
+                       "short_name" : "73062",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain View, OK 73062, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 35.10442099999999,
+                          "lng" : -98.741805
+                       },
+                       "southwest" : {
+                          "lat" : 35.09236,
+                          "lng" : -98.7606699
+                       }
+                    },
+                    "location" : {
+                       "lat" : 35.0975577,
+                       "lng" : -98.7464552
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 35.10442099999999,
+                          "lng" : -98.741805
+                       },
+                       "southwest" : {
+                          "lat" : 35.09236,
+                          "lng" : -98.7606699
+                       }
+                    }
+                 },
+                 "types" : [ "locality", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:04 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=White%20House%201600%20DC&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:04 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:04 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "The White House",
+                       "short_name" : "The White House",
+                       "types" : [ "establishment" ]
+                    },
+                    {
+                       "long_name" : "1600",
+                       "short_name" : "1600",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Pennsylvania Avenue Northwest",
+                       "short_name" : "Pennsylvania Ave NW",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Washington",
+                       "short_name" : "Washington",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "District of Columbia",
+                       "short_name" : "DC",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "20500",
+                       "short_name" : "20500",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "The White House, 1600 Pennsylvania Avenue Northwest, Washington, DC 20500, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 38.8987297,
+                          "lng" : -77.0350452
+                       },
+                       "southwest" : {
+                          "lat" : 38.8952373,
+                          "lng" : -77.0379916
+                       }
+                    },
+                    "location" : {
+                       "lat" : 38.89768309999999,
+                       "lng" : -77.0364972
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 38.8987297,
+                          "lng" : -77.0350452
+                       },
+                       "southwest" : {
+                          "lat" : 38.8952373,
+                          "lng" : -77.0379916
+                       }
+                    }
+                 },
+                 "types" : [ "establishment" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:04 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=The%20White%20House,%201600%20Pennsylvania%20Avenue%20Northwest,%20Washington,%20DC%2020500,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:04 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:04 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "The White House",
+                       "short_name" : "The White House",
+                       "types" : [ "establishment" ]
+                    },
+                    {
+                       "long_name" : "1600",
+                       "short_name" : "1600",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Pennsylvania Avenue Northwest",
+                       "short_name" : "Pennsylvania Ave NW",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Washington",
+                       "short_name" : "Washington",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "District of Columbia",
+                       "short_name" : "DC",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "20500",
+                       "short_name" : "20500",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "The White House, 1600 Pennsylvania Avenue Northwest, Washington, DC 20500, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 38.8987297,
+                          "lng" : -77.0350452
+                       },
+                       "southwest" : {
+                          "lat" : 38.8952373,
+                          "lng" : -77.0379916
+                       }
+                    },
+                    "location" : {
+                       "lat" : 38.89768309999999,
+                       "lng" : -77.0364972
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 38.8987297,
+                          "lng" : -77.0350452
+                       },
+                       "southwest" : {
+                          "lat" : 38.8952373,
+                          "lng" : -77.0379916
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "establishment" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:04 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=1600hiteatre,%20Mountain%20View,%20CA%20&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:04 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:04 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Mountain View",
+                       "short_name" : "Mountain View",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Santa Clara",
+                       "short_name" : "Santa Clara",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Mountain View, CA, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 37.4508789,
+                          "lng" : -122.0446721
+                       },
+                       "southwest" : {
+                          "lat" : 37.3565411,
+                          "lng" : -122.1178619
+                       }
+                    },
+                    "location" : {
+                       "lat" : 37.3860517,
+                       "lng" : -122.0838511
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 37.4508789,
+                          "lng" : -122.0446721
+                       },
+                       "southwest" : {
+                          "lat" : 37.3565411,
+                          "lng" : -122.1178619
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "locality", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:04 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=Archer%20Daniels%20Midland%20Co.&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:05 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:05 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Midland",
+                       "short_name" : "Midland",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Teller",
+                       "short_name" : "Teller",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Colorado",
+                       "short_name" : "CO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "80814",
+                       "short_name" : "80814",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Midland, CO 80814, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 38.8583333,
+                       "lng" : -105.1616667
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 38.8670215,
+                          "lng" : -105.1456593
+                       },
+                       "southwest" : {
+                          "lat" : 38.849644,
+                          "lng" : -105.1776741
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "locality", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:05 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=1601%20West%20Mission%20Boulevard%20%23104&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:10 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:10 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Boulevard",
+                       "short_name" : "W Mission Blvd",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Westmont",
+                       "short_name" : "Westmont",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Pomona",
+                       "short_name" : "Pomona",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Los Angeles",
+                       "short_name" : "Los Angeles",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "91766",
+                       "short_name" : "91766",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Boulevard #104, Pomona, CA 91766, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 34.0542124,
+                       "lng" : -117.7771653
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 34.0555613802915,
+                          "lng" : -117.7758163197085
+                       },
+                       "southwest" : {
+                          "lat" : 34.0528634197085,
+                          "lng" : -117.7785142802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Road",
+                       "short_name" : "W Mission Rd",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "San Marcos",
+                       "short_name" : "San Marcos",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "San Diego",
+                       "short_name" : "San Diego",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "92069",
+                       "short_name" : "92069",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Road #104, San Marcos, CA 92069, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 33.1516547,
+                       "lng" : -117.194242
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 33.1530036802915,
+                          "lng" : -117.1928930197085
+                       },
+                       "southwest" : {
+                          "lat" : 33.15030571970851,
+                          "lng" : -117.1955909802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Boulevard",
+                       "short_name" : "W Mission Blvd",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Ontario",
+                       "short_name" : "Ontario",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "San Bernardino",
+                       "short_name" : "San Bernardino",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "91762",
+                       "short_name" : "91762",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Boulevard #104, Ontario, CA 91762, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 34.0558529,
+                       "lng" : -117.6764125
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 34.05720188029149,
+                          "lng" : -117.6750635197085
+                       },
+                       "southwest" : {
+                          "lat" : 34.05450391970849,
+                          "lng" : -117.6777614802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Lane",
+                       "short_name" : "W Mission Ln",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "North Mountain Village",
+                       "short_name" : "North Mountain Village",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Phoenix",
+                       "short_name" : "Phoenix",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Maricopa",
+                       "short_name" : "Maricopa",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Arizona",
+                       "short_name" : "AZ",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "85021",
+                       "short_name" : "85021",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Lane #104, Phoenix, AZ 85021, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 33.568905,
+                       "lng" : -112.093409
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 33.5702539802915,
+                          "lng" : -112.0920600197085
+                       },
+                       "southwest" : {
+                          "lat" : 33.5675560197085,
+                          "lng" : -112.0947579802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Avenue",
+                       "short_name" : "W Mission Ave",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "West Central",
+                       "short_name" : "West Central",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Spokane",
+                       "short_name" : "Spokane",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Spokane",
+                       "short_name" : "Spokane",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Washington",
+                       "short_name" : "WA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "99201",
+                       "short_name" : "99201",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Avenue #104, Spokane, WA 99201, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 47.6716922,
+                       "lng" : -117.4355505
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 47.67304118029149,
+                          "lng" : -117.4342015197085
+                       },
+                       "southwest" : {
+                          "lat" : 47.67034321970849,
+                          "lng" : -117.4368994802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Drive",
+                       "short_name" : "W Mission Dr",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Chandler",
+                       "short_name" : "Chandler",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Maricopa",
+                       "short_name" : "Maricopa",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Arizona",
+                       "short_name" : "AZ",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "85224",
+                       "short_name" : "85224",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Drive #104, Chandler, AZ 85224, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 33.3453515,
+                       "lng" : -111.8700081
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 33.3467004802915,
+                          "lng" : -111.8686591197085
+                       },
+                       "southwest" : {
+                          "lat" : 33.3440025197085,
+                          "lng" : -111.8713570802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:10 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=1601%20West%20Mission%20Boulevard%20%23104,%20Pomona,%20CA%2091766,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:11 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:11 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Boulevard",
+                       "short_name" : "W Mission Blvd",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Westmont",
+                       "short_name" : "Westmont",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Pomona",
+                       "short_name" : "Pomona",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Los Angeles",
+                       "short_name" : "Los Angeles",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "91766",
+                       "short_name" : "91766",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Boulevard #104, Pomona, CA 91766, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 34.0542124,
+                       "lng" : -117.7771653
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 34.0555613802915,
+                          "lng" : -117.7758163197085
+                       },
+                       "southwest" : {
+                          "lat" : 34.0528634197085,
+                          "lng" : -117.7785142802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:11 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=1601%20West%20Mission%20Road%20%23104,%20San%20Marcos,%20CA%2092069,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:12 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:12 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Road",
+                       "short_name" : "W Mission Rd",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "San Marcos",
+                       "short_name" : "San Marcos",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "San Diego",
+                       "short_name" : "San Diego",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "92069",
+                       "short_name" : "92069",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Road #104, San Marcos, CA 92069, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 33.1516547,
+                       "lng" : -117.194242
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 33.1530036802915,
+                          "lng" : -117.1928930197085
+                       },
+                       "southwest" : {
+                          "lat" : 33.15030571970851,
+                          "lng" : -117.1955909802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:12 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=1601%20West%20Mission%20Boulevard%20%23104,%20Ontario,%20CA%2091762,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:17 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:17 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Boulevard",
+                       "short_name" : "W Mission Blvd",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Ontario",
+                       "short_name" : "Ontario",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "San Bernardino",
+                       "short_name" : "San Bernardino",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "91762",
+                       "short_name" : "91762",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "104 West Mission Boulevard, Ontario, CA 91762, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 34.0550643,
+                          "lng" : -117.651184
+                       },
+                       "southwest" : {
+                          "lat" : 34.055049,
+                          "lng" : -117.6511842
+                       }
+                    },
+                    "location" : {
+                       "lat" : 34.0550643,
+                       "lng" : -117.6511842
+                    },
+                    "location_type" : "RANGE_INTERPOLATED",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 34.05640563029149,
+                          "lng" : -117.6498351197085
+                       },
+                       "southwest" : {
+                          "lat" : 34.0537076697085,
+                          "lng" : -117.6525330802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:17 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=1601%20West%20Mission%20Lane%20%23104,%20Phoenix,%20AZ%2085021,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:17 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:17 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Lane",
+                       "short_name" : "W Mission Ln",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "North Mountain Village",
+                       "short_name" : "North Mountain Village",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Phoenix",
+                       "short_name" : "Phoenix",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Maricopa",
+                       "short_name" : "Maricopa",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Arizona",
+                       "short_name" : "AZ",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "85021",
+                       "short_name" : "85021",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Lane #104, Phoenix, AZ 85021, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 33.568905,
+                       "lng" : -112.093409
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 33.5702539802915,
+                          "lng" : -112.0920600197085
+                       },
+                       "southwest" : {
+                          "lat" : 33.5675560197085,
+                          "lng" : -112.0947579802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:18 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=1601%20West%20Mission%20Avenue%20%23104,%20Spokane,%20WA%2099201,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:18 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:18 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Avenue",
+                       "short_name" : "W Mission Ave",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Spokane",
+                       "short_name" : "Spokane",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Spokane",
+                       "short_name" : "Spokane",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Washington",
+                       "short_name" : "WA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "99201",
+                       "short_name" : "99201",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Avenue #104, Spokane, WA 99201, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 47.672127,
+                       "lng" : -117.4118537
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 47.67347598029151,
+                          "lng" : -117.4105047197085
+                       },
+                       "southwest" : {
+                          "lat" : 47.67077801970851,
+                          "lng" : -117.4132026802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:18 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=1601%20West%20Mission%20Drive%20%23104,%20Chandler,%20AZ%2085224,%20USA&region=us&sensor=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Oct 2013 01:36:18 GMT
+      Expires:
+      - Fri, 11 Oct 2013 01:36:18 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "104",
+                       "short_name" : "104",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1601",
+                       "short_name" : "1601",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "West Mission Drive",
+                       "short_name" : "W Mission Dr",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Chandler",
+                       "short_name" : "Chandler",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Maricopa",
+                       "short_name" : "Maricopa",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Arizona",
+                       "short_name" : "AZ",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "85224",
+                       "short_name" : "85224",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1601 West Mission Drive #104, Chandler, AZ 85224, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 33.3453515,
+                       "lng" : -111.8700081
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 33.3467004802915,
+                          "lng" : -111.8686591197085
+                       },
+                       "southwest" : {
+                          "lat" : 33.3440025197085,
+                          "lng" : -111.8713570802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 10 Oct 2013 01:36:18 GMT
+recorded_with: VCR 2.6.0

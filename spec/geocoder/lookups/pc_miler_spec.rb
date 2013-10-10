@@ -3,6 +3,7 @@ include Geocoder::Lookup
 
 describe PcMiler do
   it "address to json" do
+    # ap GoogleMap::CHICAGO
     expected = { street: "528 Marie Dr", city: "South Holland", state: "IL", postcode: "60473", list: 10 }
     PcMiler.hash_address("528 Marie Dr, South Holland, IL 60473").should eq(expected)
 
@@ -12,10 +13,8 @@ describe PcMiler do
 
   it "locations" do
     locations = PcMiler.locations("528 Marie Dr, South Holland, IL 60473")
-    locations.first["Coords"].should == {
-      "Lat" => "41.594123",
-      "Lon" => "-87.603162"
-    }
+    locations.first.lng.should == -87.603162
+    locations.first.lat.should == 41.594123
     PcMiler.locations("528 Marie").should be_nil
     PcMiler.locations("Marie Dr, South Holland, IL").size.should eq(2)
   end
@@ -34,7 +33,7 @@ describe PcMiler do
     end
 
     it "distance" do
-      PcMiler.distance(from, to).should eq(42.8)
+      PcMiler.distance(from, to).should eq(68879.92)
     end
   end
 end

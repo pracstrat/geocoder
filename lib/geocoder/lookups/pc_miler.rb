@@ -34,27 +34,31 @@ module Geocoder
       def self.locations(address)
         options = hash_address(address)
         return nil if options.empty?
-        ret = []
+        locations = []
         query = options.map{|key, value| "#{key}=#{CGI::escape(value.to_s)}" }.join("&")
         uri = URI::parse("#{BASE}/locations?#{query}")
         begin
           Net::HTTP.start(uri.host, uri.port) do |http|
             response = http.request_get(uri.request_uri, headers(uri))
             ret = JSON.parse(response.body) if response.code.to_i == 200
+            locations = ret.compact.uniq.collect{|ret|
+              address_str = "#{ret['Address']['StreetAddress']}, #{ret['Address']['City']}, #{ret['Address']['State']} #{ret['Address']['Zip']}, USA"
+              Location.new({:address => address_str, lng: ret['Coords']['Lon'].to_f, lat: ret['Coords']['Lat'].to_f})
+            }
           end
         rescue Exception => ex
           puts ex
           ex.to_s
         end
-        ret
+        locations
       end
 
       def self.coordinates(address)
         return nil if address.empty?
         unless locations(address).nil?
           locations(address).map{|loc|
-            lat = loc["Coords"]["Lat"].to_f rescue nil
-            lon = loc["Coords"]["Lon"].to_f rescue nil
+            lat = loc.lat.to_f rescue nil
+            lon = loc.lng.to_f rescue nil
             [ lat, lon ]
           }.first
         else
@@ -87,7 +91,7 @@ module Geocoder
       end
 
       def self.distance(ori, dest)
-        mileage(ori, dest).last.to_f rescue nil
+        (mileage(ori, dest).last.to_f * 1609.344).round(2) rescue nil
       end
     end
   end
