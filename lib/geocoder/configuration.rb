@@ -43,7 +43,7 @@ module Geocoder
 
     private
     def set_defaults
-      @data[:lookup] = :google_map
+      @data[:lookup] = nil
       @data[:username] = nil
       @data[:password] = nil
       @data[:account] = nil

@@ -67,24 +67,31 @@ JS
   end
 
   it "get the coordinates from google" do
-    GoogleMap.coordinates("25 Main St, Cooperstown, NY").should eq([42.700118, -74.922652])
+    GoogleMap.coordinates("25 Main St, Cooperstown, NY").first.to_i.should eq(42)
+    GoogleMap.coordinates("25 Main St, Cooperstown, NY").last.to_i.should eq(-74)
   end
 
-  def check_locations(address, expected)
-    GoogleMap.locations(address).map{|loc| [loc.address, loc.lat, loc.lng]} == expected
+  def check_locations(address, loc)
+    location = GoogleMap.locations(address).first
+    if loc != nil && location != nil then
+      location.street.should == loc.street
+      location.city.should == loc.city
+      location.state.should == loc.state
+      location.zipcode.should == loc.zipcode
+      location.lat.to_i.should == loc.lat.to_i
+      location.lng.to_i.should == loc.lng.to_i
+    end
   end
 
   it "request google locations to get standard full address" do
     pass = []
-    # VCR.use_cassette("google_map_geocoder") do
-      pass << check_locations("Mountain, Leakey, ", [["Mountain, Leakey, TX 78873, USA", 29.727109, -99.763538]])
-      pass << check_locations("6454 East Taft, East Syracuse, ", [["6454 East Taft Road, East Syracuse, NY 13057, USA", 43.126749, -76.074855]])
-      pass << check_locations("Mountain View, , ", [])
-      pass << check_locations("White House 1600 DC", [["The White House, 1600 Pennsylvania Avenue Northwest, Washington, DC 20500, USA", 38.898323, -77.036656]])
-      pass << check_locations("1600hiteatre, Mountain View, CA ", [])
-      pass << check_locations("Archer Daniels Midland Co.", [["Adm, 2501 County Highway 1, Decatur, IL 62526, USA", 39.865423, -88.89866]])
-      pass << check_locations("1601 West Mission Boulevard #104, , ", [["1601 West Mission Boulevard #104, Pomona, CA 91766, USA", 34.055355, -117.778059]])
-    # end
+    pass << check_locations("Mountain, Leakey, ", Location.new({street: "Mountain", city: "Leakey", state: "TX", zipcode: "78873", lat: 29.727109, lng: -99.763538}))
+    pass << check_locations("6454 East Taft, East Syracuse, ", Location.new({street: "6454 East Taft Road",city: "East Syracuse",state: "NY",zipcode: "13057",lat: 43.126749,lng: -76.074855}))
+    pass << check_locations("Mountain View, , ", nil)
+    pass << check_locations("White House 1600 DC", Location.new({street: "The White House,1600 Pennsylvania Avenue Northwest",city: "Washington",state: "DC",zipcode: "20500",lat: 38.898323,lng: -77.036656}))
+    pass << check_locations("1600hiteatre, Mountain View, CA ", nil)
+    pass << check_locations("Archer Daniels Midland Co.", Location.new({street: "2501 County Highway 1",city: "Decatur",state: "IL",zipcode: "62526",lat: 39.865423,lng: -88.89866}))
+    pass << check_locations("1601 West Mission Boulevard #104, , ", Location.new({street: "1601 West Mission Boulevard #104", city: "Pomona", state: "CA", zipcode: "91766",lat: 34.055355,lng: -117.778059}))
     pass.select{|i| i}.size.should >= 3
   end
 end

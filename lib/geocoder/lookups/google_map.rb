@@ -58,6 +58,7 @@ module Geocoder
       end
 
       def self.locations(address)
+        return nil if address.empty?
         address_geocode = address.split(', ').map!{ |add| add.strip.empty? ? nil : add }.compact.join(', ')
         json = geocode_to_json(address_geocode)
         locations = []
@@ -67,10 +68,18 @@ module Geocoder
             match["formatted_address"] if match["formatted_address"]=~US_ADDRESS
           } if json["status"] == "OK"
           locations = ret.compact.uniq.collect{|addr_from_google_map|
+            # ap addr_from_google_map
+            addr = addr_from_google_map.split(',').map(&:strip)
+            country = addr.pop
+            state_zip = addr.pop
+            city = addr.pop
+            street = addr.join(',')
+            # ap street
+            state, zipcode = state_zip.split(' ').map(&:strip)
             loc = {}
             json = geocode_to_json(addr_from_google_map)
             loc = json["results"][0]["geometry"]["location"]  if json["status"] == "OK"
-            Location.new({:address => addr_from_google_map, :lng => loc["lng"].round(6), :lat => loc["lat"].round(6)}) rescue nil
+            Location.new({:street => street, :city => city, :state => state, :zipcode => zipcode, :lng => loc["lng"].round(6), :lat => loc["lat"].round(6)}) rescue nil
           }
         end
         locations.compact

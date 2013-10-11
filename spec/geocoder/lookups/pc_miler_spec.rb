@@ -13,6 +13,10 @@ describe PcMiler do
 
   it "locations" do
     locations = PcMiler.locations("528 Marie Dr, South Holland, IL 60473")
+    locations.first.street.should == "528 Marie Drive"
+    locations.first.city.should == "South Holland"
+    locations.first.state.should == "IL"
+    locations.first.zipcode.should == "60473"
     locations.first.lng.should == -87.603162
     locations.first.lat.should == 41.594123
     PcMiler.locations("528 Marie").should be_nil
