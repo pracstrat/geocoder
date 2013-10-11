@@ -2,6 +2,7 @@ require 'base64'
 require 'openssl'
 require 'net/http'
 require 'json'
+require "geocoder/location"
 module Geocoder
   module Lookup
     class GoogleMap < Base

@@ -2,7 +2,7 @@ require 'awesome_print'
 require "geocoder/configuration"
 require "geocoder/lookups/base"
 require "geocoder/lookups/pc_miler"
-require "geocoder/lookups/location"
+require "geocoder/location"
 require "geocoder/lookups/google_map"
 require 'active_support'
 
