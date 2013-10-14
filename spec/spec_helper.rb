@@ -19,5 +19,6 @@ Geocoder.configure({
   lookup: :pc_miler,
   username: "R2R",
   password: "R2R103338",
-  account: "R2RIntermodal_test"
+  account: "R2RIntermodal_test",
+  apikey: "E61C0420C148D141BA45A25B1B5501FD"
 })

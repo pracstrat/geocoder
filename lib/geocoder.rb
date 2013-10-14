@@ -28,4 +28,20 @@ module Geocoder
   def self.instance
     Geocoder::Configuration.instance
   end
+
+  def self.header
+    lookup.header
+  end
+
+  def self.show
+    lookup.show
+  end
+
+  def self.request_directions(from, to, id)
+    lookup.request_directions(from, to, id)
+  end
+
+  def self.clear_directions
+    lookup.clear_directions
+  end
 end

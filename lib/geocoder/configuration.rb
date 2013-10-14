@@ -18,7 +18,8 @@ module Geocoder
       :lookup,
       :username,
       :password,
-      :account
+      :account,
+      :apikey
     ]
 
     attr_accessor :data
@@ -47,6 +48,7 @@ module Geocoder
       @data[:username] = nil
       @data[:password] = nil
       @data[:account] = nil
+      @data[:apikey] = nil
     end
   end
 end

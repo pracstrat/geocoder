@@ -7,6 +7,7 @@ module Geocoder
   module Lookup
     class PcMiler < Base
 
+      CHICAGO = [41.850033, -87.6500523]
       DIGEST = OpenSSL::Digest::Digest.new("sha256")
       BASE = "http://pcmiler.alk.com/APIs/REST/v0.5/Service.svc"
 
@@ -93,6 +94,49 @@ module Geocoder
 
       def self.distance(ori, dest)
         (mileage(ori, dest).last.to_f * 1609.344).round(2) rescue nil
+      end
+
+      def self.header
+        '<script src="http://maps.alk.com/api/1.0/ALKMaps.js" type="text/javascript"></script>'
+      end
+
+      def self.show
+<<JS
+<script type="text/javascript">
+#{init_script}
+</script>
+JS
+      end
+
+      def self.init_script
+<<JS
+var map, layer;
+var lon = CHICAGO.last, lat = CHICAGO.first, zoom = 3, apikey = instance.apikey
+clearDirections();
+function clearDirections() {
+  ALKMaps.APIKey = apikey;
+  map = new ALKMaps.Map('map');
+  layer = new ALKMaps.Layer.BaseMap("ALK Maps", {}, {displayInLayerSwitcher: false});
+  map.addLayer(layer);
+  var lonlat = new ALKMaps.LonLat(lon,lat);
+  map.setCenter(lonlat, zoom);
+}
+function requestRoutes(from, to, id, times) {
+
+}
+JS
+      end
+
+      def self.request_directions(from, to, id)
+<<JS
+requestRoutes('#{from}', '#{to}', '#{id}', 1);
+JS
+      end
+
+      def self.clear_directions
+<<JS
+clearDirections();
+JS
       end
     end
   end
