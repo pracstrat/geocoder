@@ -111,7 +111,7 @@ JS
       def self.init_script
 <<JS
 var map, layer;
-var lon = CHICAGO.last, lat = CHICAGO.first, zoom = 3, apikey = instance.apikey
+var lon = #{CHICAGO.last}, lat = #{CHICAGO.first}, zoom = 3, apikey = #{instance.apikey}
 clearDirections();
 function clearDirections() {
   ALKMaps.APIKey = apikey;
