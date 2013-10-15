@@ -112,41 +112,41 @@ JS
 <<JS
 var map, layer;
 var lon = #{CHICAGO.last}, lat = #{CHICAGO.first}, zoom = 3;
-ALKMaps.APIKey = #{instance.apikey};
-clearDirections();
+ALKMaps.APIKey = "#{instance.apikey}";
+map = new ALKMaps.Map('map');
+layer = new ALKMaps.Layer.BaseMap("ALK Maps", {}, {displayInLayerSwitcher: false});
+map.addLayer(layer);
+var lonlat = new ALKMaps.LonLat(lon,lat);
+map.setCenter(lonlat, zoom);
+
+var routingLayer = new ALKMaps.Layer.Routing( "Route Layer");
 
 function clearDirections() {
-  map = new ALKMaps.Map('map');
-  layer = new ALKMaps.Layer.BaseMap("ALK Maps", {}, {displayInLayerSwitcher: false});
-  map.addLayer(layer);
-  var lonlat = new ALKMaps.LonLat(lon,lat);
-  map.setCenter(lonlat, zoom);
-}
-function requestRoutes(from, to, id, times) {
-  var routingLayer = new ALKMaps.Layer.Routing("Route Layer")
+
+  // map.removeLayer(routingLayer, layer);
 }
 
-fucntion requestRoutes(origin, dest, id) {
-  var routingLayer = new ALKMaps.Layer.Routing( "Route Layer");
-        routingLayer.addRoute({
-          stops: [
-            new ALKMaps.LonLat(#{origin.last}, #{origin.first}),
-            new ALKMaps.LonLat(#{dest.last}, #{dest.first})
-          ],
-          functionOptions:{
-            routeId: id,
-            async: true
-          },
-          routeOptions: {
-            highwayOnly: false,
-            tollDiscourage: true
-          },
-          reportOptions: {
-            type: "mileage",
-            format: "json"
-          }
-        });
-        map.addLayer(routingLayer);
+function requestRoutes(origin, dest, id) {
+  routingLayer.addRoute({
+    stops: [
+      new ALKMaps.LonLat(origin[1], origin[0]),
+      new ALKMaps.LonLat(dest[1], dest[0])
+    ],
+    functionOptions:{
+      routeId: id,
+      async: true
+    },
+    routeOptions: {
+      highwayOnly: false,
+      tollDiscourage: true
+    },
+    reportOptions: {
+      type: "mileage",
+      format: "json"
+    }
+  });
+
+  map.addLayer(routingLayer);
 }
 JS
       end
@@ -158,8 +158,9 @@ JS
         zipcode = to
         address = "#{street}, #{city}, #{state} #{zipcode}"
         dest = coordinates(address)
+        origin = from.split(',').map(&:to_f)
 <<JS
-requestRoutes('#{from}', '#{dest}', '#{id}');
+requestRoutes([#{origin[0].to_f}, #{origin[1].to_f}], [#{dest[0].to_f}, #{dest[1].to_f}], '#{id}');
 JS
       end
 
