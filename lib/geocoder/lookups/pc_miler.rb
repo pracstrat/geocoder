@@ -111,10 +111,11 @@ JS
       def self.init_script
 <<JS
 var map, layer;
-var lon = #{CHICAGO.last}, lat = #{CHICAGO.first}, zoom = 3, apikey = #{instance.apikey}
+var lon = #{CHICAGO.last}, lat = #{CHICAGO.first}, zoom = 3;
+ALKMaps.APIKey = #{instance.apikey};
 clearDirections();
+
 function clearDirections() {
-  ALKMaps.APIKey = apikey;
   map = new ALKMaps.Map('map');
   layer = new ALKMaps.Layer.BaseMap("ALK Maps", {}, {displayInLayerSwitcher: false});
   map.addLayer(layer);
@@ -122,14 +123,43 @@ function clearDirections() {
   map.setCenter(lonlat, zoom);
 }
 function requestRoutes(from, to, id, times) {
+  var routingLayer = new ALKMaps.Layer.Routing("Route Layer")
+}
 
+fucntion requestRoutes(origin, dest, id) {
+  var routingLayer = new ALKMaps.Layer.Routing( "Route Layer");
+        routingLayer.addRoute({
+          stops: [
+            new ALKMaps.LonLat(#{origin.last}, #{origin.first}),
+            new ALKMaps.LonLat(#{dest.last}, #{dest.first})
+          ],
+          functionOptions:{
+            routeId: id,
+            async: true
+          },
+          routeOptions: {
+            highwayOnly: false,
+            tollDiscourage: true
+          },
+          reportOptions: {
+            type: "mileage",
+            format: "json"
+          }
+        });
+        map.addLayer(routingLayer);
 }
 JS
       end
 
       def self.request_directions(from, to, id)
+        street = ''
+        city   = ''
+        state  = ''
+        zipcode = to
+        address = "#{street}, #{city}, #{state} #{zipcode}"
+        dest = coordinates(address)
 <<JS
-requestRoutes('#{from}', '#{to}', '#{id}', 1);
+requestRoutes('#{from}', '#{dest}', '#{id}');
 JS
       end
 
