@@ -164,12 +164,18 @@ JS
       def self.request_directions(from, to, id)
         address      = ", ,  #{to}"
         destCo       = coordinates(address)
-        originCo     = from.split(',').map(&:to_f)
-        meter        = (mileage(originCo, destCo).last.to_f * 1609.344).round(2)
-        dest         = "#{locations(address).first.city}, #{locations(address).first.state} #{locations(address).first.zipcode}"
+        if destCo.nil? then
+<<JS
+[]
+JS
+        else
+          originCo     = from.split(',').map(&:to_f)
+          meter        = (mileage(originCo, destCo).last.to_f * 1609.344).round(2)
+          dest         = "#{locations(address).first.city}, #{locations(address).first.state} #{locations(address).first.zipcode}"
 <<JS
 requestRoutes([#{originCo[0].to_f}, #{originCo[1].to_f}], [#{destCo[0].to_f}, #{destCo[1].to_f}], '#{id}', #{meter}, '#{dest}');
 JS
+        end
       end
 
       def self.clear_directions

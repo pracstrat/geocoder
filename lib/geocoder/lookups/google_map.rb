@@ -131,6 +131,7 @@ function requestRoutes(from, to, id, times){
       }else{
         if(times==5){
           //requestDirectionsError(id, result, status);
+          return [];
         }else{
           requestRoutes(from, to, id, times+1);
         }
