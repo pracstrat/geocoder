@@ -168,7 +168,7 @@ JS
         meter        = (mileage(originCo, destCo).last.to_f * 1609.344).round(2) rescue nil
         dest         = "#{locations(address).first.city}, #{locations(address).first.state} #{to}"
 <<JS
-requestRoutes([#{originCo[0].to_f}, #{originCo[1].to_f}], [#{destCo[0].to_f}, #{destCo[1].to_f}], '#{id}', #{meter}, #{dest});
+requestRoutes([#{originCo[0].to_f}, #{originCo[1].to_f}], [#{destCo[0].to_f}, #{destCo[1].to_f}], '#{id}', #{meter}, '#{dest}');
 JS
       end
 
