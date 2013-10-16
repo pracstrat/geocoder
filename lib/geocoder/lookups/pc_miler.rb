@@ -130,6 +130,8 @@ function clearDirections() {
     routingLayer.removeRoute(routeIds[i]);
   }
   routeIdIndex = 0;
+  routeIds = new Array();
+  routingLayer = new ALKMaps.Layer.Routing( "Route Layer");
 }
 
 function requestRoutes(origin, dest, id) {
