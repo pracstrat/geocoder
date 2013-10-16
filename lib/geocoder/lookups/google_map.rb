@@ -126,10 +126,11 @@ function requestRoutes(from, to, id, times){
         var directionsRenderer = new google.maps.DirectionsRenderer();
         directionsRenderer.setMap(map);
         directionsRenderer.setDirections(result);
+        return [result.routes[0].legs[0].distance.value, result.routes[0].legs[0].end_address];
         //loadedDirections(id, result, status);
       }else{
         if(times==5){
-          requestDirectionsError(id, result, status);
+          //requestDirectionsError(id, result, status);
         }else{
           requestRoutes(from, to, id, times+1);
         }

@@ -69,10 +69,7 @@ module Geocoder
       end
 
       def self.mileage(ori, dest)
-        ori = coordinates(ori)
-        dest = coordinates(dest)
         uri = URI::parse("#{BASE}/mileage")
-
         body = {
           "Request" => {
             "Coordinates" => [
@@ -93,6 +90,8 @@ module Geocoder
       end
 
       def self.distance(ori, dest)
+        ori = coordinates(ori)
+        dest = coordinates(dest)
         (mileage(ori, dest).last.to_f * 1609.344).round(2) rescue nil
       end
 
@@ -134,12 +133,12 @@ function clearDirections() {
   routingLayer = new ALKMaps.Layer.Routing( "Route Layer");
 }
 
-function requestRoutes(origin, dest, id) {
+function requestRoutes(originCo, destCo, id, meter, dest) {
   routeIds[routeIdIndex] = id;
   routingLayer.addRoute({
     stops: [
-      new ALKMaps.LonLat(origin[1], origin[0]),
-      new ALKMaps.LonLat(dest[1], dest[0])
+      new ALKMaps.LonLat(originCo[1], originCo[0]),
+      new ALKMaps.LonLat(destCo[1], destCo[0])
     ],
     functionOptions:{
       routeId: id,
@@ -157,20 +156,19 @@ function requestRoutes(origin, dest, id) {
 
   map.addLayer(routingLayer);
   routeIdIndex = routeIdIndex + 1;
+  return [meter, dest];
 }
 JS
       end
 
       def self.request_directions(from, to, id)
-        street = ''
-        city   = ''
-        state  = ''
-        zipcode = to
-        address = "#{street}, #{city}, #{state} #{zipcode}"
-        dest = coordinates(address)
-        origin = from.split(',').map(&:to_f)
+        address      = ", ,  #{to}"
+        destCo       = coordinates(address)
+        originCo     = from.split(',').map(&:to_f)
+        meter        = (mileage(originCo, destCo).last.to_f * 1609.344).round(2) rescue nil
+        dest         = "#{locations(address).first.city}, #{locations(address).first.state} #{to}"
 <<JS
-requestRoutes([#{origin[0].to_f}, #{origin[1].to_f}], [#{dest[0].to_f}, #{dest[1].to_f}], '#{id}');
+requestRoutes([#{originCo[0].to_f}, #{originCo[1].to_f}], [#{destCo[0].to_f}, #{destCo[1].to_f}], '#{id}', #{meter}, #{dest});
 JS
       end
 
