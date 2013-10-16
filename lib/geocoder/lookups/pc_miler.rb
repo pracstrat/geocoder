@@ -118,15 +118,22 @@ layer = new ALKMaps.Layer.BaseMap("ALK Maps", {}, {displayInLayerSwitcher: false
 map.addLayer(layer);
 var lonlat = new ALKMaps.LonLat(lon,lat);
 map.setCenter(lonlat, zoom);
+var routeIdIndex = 0;
+var routeIds = new Array();
 
 var routingLayer = new ALKMaps.Layer.Routing( "Route Layer");
 
 function clearDirections() {
 
-  // map.removeLayer(routingLayer, layer);
+  for (var i=0; i<=routeIdIndex; i++)
+  {
+    routingLayer.removeRoute(routeIds[i]);
+  }
+  routeIdIndex = 0;
 }
 
 function requestRoutes(origin, dest, id) {
+  routeIds[routeIdIndex] = id;
   routingLayer.addRoute({
     stops: [
       new ALKMaps.LonLat(origin[1], origin[0]),
@@ -147,6 +154,7 @@ function requestRoutes(origin, dest, id) {
   });
 
   map.addLayer(routingLayer);
+  routeIdIndex = routeIdIndex + 1;
 }
 JS
       end

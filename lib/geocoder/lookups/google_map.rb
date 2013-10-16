@@ -126,7 +126,7 @@ function requestRoutes(from, to, id, times){
         var directionsRenderer = new google.maps.DirectionsRenderer();
         directionsRenderer.setMap(map);
         directionsRenderer.setDirections(result);
-        loadedDirections(id, result, status);
+        //loadedDirections(id, result, status);
       }else{
         if(times==5){
           requestDirectionsError(id, result, status);
