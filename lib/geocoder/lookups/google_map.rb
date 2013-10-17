@@ -142,7 +142,6 @@ var mapAndRouteService = new function() {
           }else{
             this.requestDirectionsError();
           }
-        }
     });
   }
 
