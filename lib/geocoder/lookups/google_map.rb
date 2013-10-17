@@ -94,7 +94,7 @@ module Geocoder
       end
 
       def self.header
-        '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=en&region=US"></script>'
+        '<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en&region=US"></script>'
       end
 
       def self.show
