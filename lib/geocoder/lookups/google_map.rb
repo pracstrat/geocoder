@@ -127,7 +127,7 @@ var mapAndRouteService = new function() {
     directionsDisplay.setMap(map);
   }
 
-  this.requestRoutes = function (from, to, id){
+  this.requestRoutes = function (from, to, id, times){
     directionsService.route({
         origin: from,
         destination: to,
@@ -138,9 +138,13 @@ var mapAndRouteService = new function() {
             var directionsRenderer = new google.maps.DirectionsRenderer();
             directionsRenderer.setMap(map);
             directionsRenderer.setDirections(result);
-            this.loadedDirections(id, result.routes[0].legs[0].distance.value, result.routes[0].legs[0].end_address);
+            mapAndRouteService.loadedDirections(id, result.routes[0].legs[0].distance.value, result.routes[0].legs[0].end_address);
           }else{
-            this.requestDirectionsError();
+            if (times == 5) {
+              mapAndRouteService.requestDirectionsError();
+            }else{
+              mapAndRouteService.requestRoutes(from, to, id, times+1);
+            }
           }
     });
   }
@@ -170,7 +174,7 @@ JS
 
       def self.request_directions(from, to, id)
 <<JS
-mapAndRouteService.requestRoutes('#{from}', '#{to}', '#{id}');
+mapAndRouteService.requestRoutes('#{from}', '#{to}', '#{id}', 1);
 JS
       end
 
