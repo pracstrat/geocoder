@@ -109,55 +109,76 @@ JS
 
       def self.init_script
 <<JS
-var map, layer;
-var lon = #{CHICAGO.last}, lat = #{CHICAGO.first}, zoom = 3;
-ALKMaps.APIKey = "#{instance.apikey}";
-map = new ALKMaps.Map('map');
-layer = new ALKMaps.Layer.BaseMap("ALK Maps", {}, {displayInLayerSwitcher: false});
-map.addLayer(layer);
-var lonlat = new ALKMaps.LonLat(lon,lat);
-map.setCenter(lonlat, zoom);
-var routeIdIndex = 0;
-var routeIds = new Array();
 
-var routingLayer = new ALKMaps.Layer.Routing( "Route Layer");
+var mapAndRouteService = new function() {
 
-function clearDirections() {
+  var map, layer, lon, lat, zoom, lonlat, routeIdIndex, routeIds, routingLayer;
+  ALKMaps.APIKey = "#{instance.apikey}";
+  map = new ALKMaps.Map('map');
+  layer = new ALKMaps.Layer.BaseMap("ALK Maps", {}, {displayInLayerSwitcher: false});
+  map.addLayer(layer);
+  lon = #{CHICAGO.last}, lat = #{CHICAGO.first}, zoom = 5;
+  lonlat = new ALKMaps.LonLat(lon,lat);
 
-  for (var i=0; i<=routeIdIndex; i++)
-  {
-    routingLayer.removeRoute(routeIds[i]);
+  this.initTheMap = function() {
+
+    map.setCenter(lonlat, zoom);
+    routeIdIndex = 0;
+    routeIds = new Array();
+    routingLayer = new ALKMaps.Layer.Routing("Route Layer");
   }
-  routeIdIndex = 0;
-  routeIds = new Array();
-  routingLayer = new ALKMaps.Layer.Routing( "Route Layer");
-}
 
-function requestRoutes(originCo, destCo, id, meter, dest) {
-  routeIds[routeIdIndex] = id;
-  routingLayer.addRoute({
-    stops: [
-      new ALKMaps.LonLat(originCo[1], originCo[0]),
-      new ALKMaps.LonLat(destCo[1], destCo[0])
-    ],
-    functionOptions:{
-      routeId: id,
-      async: true
-    },
-    routeOptions: {
-      highwayOnly: false,
-      tollDiscourage: true
-    },
-    reportOptions: {
-      type: "mileage",
-      format: "json"
+  this.clearDirections = function () {
+
+    for (var i=0; i<=routeIdIndex; i++)
+    {
+      routingLayer.removeRoute(routeIds[i]);
     }
-  });
+    routeIdIndex = 0;
+    routeIds = new Array();
+    routingLayer = new ALKMaps.Layer.Routing("Route Layer");
+  }
 
-  map.addLayer(routingLayer);
-  routeIdIndex = routeIdIndex + 1;
-  return [meter, dest];
+  this.requestRoutes = function (originCo, destCo, id, meter, dest) {
+    routeIds[routeIdIndex] = id;
+    routingLayer.addRoute({
+      stops: [
+        new ALKMaps.LonLat(originCo[1], originCo[0]),
+        new ALKMaps.LonLat(destCo[1], destCo[0])
+      ],
+      functionOptions:{
+        routeId: id,
+        async: true
+      },
+      routeOptions: {
+        highwayOnly: false,
+        tollDiscourage: true
+      },
+      reportOptions: {
+        type: "mileage",
+        format: "json"
+      }
+    });
+
+    map.addLayer(routingLayer);
+    routeIdIndex = routeIdIndex + 1;
+  }
+
+  this.loadedDirections = function(id, meters, dest){
+    if(parseInt(meters) > 0){
+      jQuery('#'+"#{instance.railmilesid}").val(jQuery("#rail_miles").val() + id+':'+meters + "|")
+      jQuery('#'+"#{instance.destdetailid}").html(dest)
+      jQuery('#'+"#{instance.destaddressid}").val(dest)
+    }
+    verifyRailMiles();
+  }
+
+  this.requestDirectionsError = function(){
+    jQuery('#'+"#{instance.destdetailid}").html("Invalid Zip");
+  }
+
 }
+mapAndRouteService.initTheMap();
 JS
       end
 
@@ -166,21 +187,23 @@ JS
         destCo       = coordinates(address)
         if destCo.nil? then
 <<JS
-[]
+mapAndRouteService.requestDirectionsError();
+mapAndRouteService.initTheMap();
 JS
         else
           originCo     = from.split(',').map(&:to_f)
           meter        = (mileage(originCo, destCo).last.to_f * 1609.344).round(2)
           dest         = "#{locations(address).first.city}, #{locations(address).first.state} #{locations(address).first.zipcode}"
 <<JS
-requestRoutes([#{originCo[0].to_f}, #{originCo[1].to_f}], [#{destCo[0].to_f}, #{destCo[1].to_f}], '#{id}', #{meter}, '#{dest}');
+mapAndRouteService.loadedDirections();
+mapAndRouteService.requestRoutes([#{originCo[0].to_f}, #{originCo[1].to_f}], [#{destCo[0].to_f}, #{destCo[1].to_f}], '#{id}', #{meter}, '#{dest}');
 JS
         end
       end
 
       def self.clear_directions
 <<JS
-clearDirections();
+mapAndRouteService.clearDirections();
 JS
       end
     end

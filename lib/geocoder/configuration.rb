@@ -19,7 +19,10 @@ module Geocoder
       :username,
       :password,
       :account,
-      :apikey
+      :apikey,
+      :railmilesid,
+      :destdetailid,
+      :destaddressid
     ]
 
     attr_accessor :data
@@ -49,6 +52,9 @@ module Geocoder
       @data[:password] = nil
       @data[:account] = nil
       @data[:apikey] = nil
+      @data[:railmilesid] = nil
+      @data[:destdetailid] = nil
+      @data[:destaddressid] = nil
     end
   end
 end

@@ -107,55 +107,80 @@ JS
 
       def self.init_script
 <<JS
-var directionsDisplay = new google.maps.DirectionsRenderer();
-var directionsService = new google.maps.DirectionsService();
-var chicago = new google.maps.LatLng(#{CHICAGO[0]}, #{CHICAGO[1]});
-var myOptions = {
-  zoom:7,
-  mapTypeId: google.maps.MapTypeId.ROADMAP,
-  center: chicago
-}
-var map = new google.maps.Map(document.getElementById('map'), myOptions);
-directionsDisplay.setMap(map);
-function requestRoutes(from, to, id, times){
-  directionsService.route({
-    origin: from,
-    destination: to,
-    travelMode: google.maps.DirectionsTravelMode.DRIVING, region: 'us'}, function(result, status){
-      if(status==google.maps.DirectionsStatus.OK){
-        var directionsRenderer = new google.maps.DirectionsRenderer();
-        directionsRenderer.setMap(map);
-        directionsRenderer.setDirections(result);
-        return [result.routes[0].legs[0].distance.value, result.routes[0].legs[0].end_address];
-        //loadedDirections(id, result, status);
-      }else{
-        if(times==5){
-          //requestDirectionsError(id, result, status);
-          return [];
+
+var mapAndRouteService = new function() {
+
+  var directionsDisplay, directionsService, chicago, myOptions, map
+
+  this.initTheMap = function () {
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsService = new google.maps.DirectionsService();
+    chicago = new google.maps.LatLng(#{CHICAGO[0]}, #{CHICAGO[1]});
+
+    myOptions = {
+      zoom:7,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: chicago
+    }
+
+    map = new google.maps.Map(document.getElementById('map'), myOptions);
+    directionsDisplay.setMap(map);
+  }
+
+  this.requestRoutes = function (from, to, id, times){
+    directionsService.route({
+        origin: from,
+        destination: to,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING,
+        region: 'us'
+      }, function(result, status){
+        if(status==google.maps.DirectionsStatus.OK){
+          var directionsRenderer = new google.maps.DirectionsRenderer();
+          directionsRenderer.setMap(map);
+          directionsRenderer.setDirections(result);
+          this.loadedDirections(id, result.routes[0].legs[0].distance.value, result.routes[0].legs[0].end_address);
         }else{
-          requestRoutes(from, to, id, times+1);
+          if(times==5){
+            this.requestDirectionsError();
+          }else{
+            requestRoutes(from, to, id, times+1);
+          }
         }
-      }
-  });
+    });
+  }
+
+  this.clearDirections = function (){
+    map = new google.maps.Map(document.getElementById('map'), myOptions);
+    directionsDisplay.setMap(map);
+  }
+
+  this.loadedDirections = function(id, meters, dest){
+    if(parseInt(meters) > 0){
+      jQuery('#'+"#{instance.railmilesid}").val(jQuery("#rail_miles").val() + id+':'+meters + "|")
+      jQuery('#'+"#{instance.destdetailid}").html(dest)
+      jQuery('#'+"#{instance.destaddressid}").val(dest)
+    }
+    verifyRailMiles();
+  }
+
+  this.requestDirectionsError = function(){
+    jQuery('#'+"#{instance.destdetailid}").html("Invalid Zip");
+  }
+
 }
-function clearDirections(){
-  map = new google.maps.Map(document.getElementById('map'), myOptions);
-  directionsDisplay.setMap(map);
-}
+mapAndRouteService.initTheMap();
 JS
       end
 
-    #'41.786579,-87.676547'
-    #'525 Marie Dr, South Holland, IL'
       def self.request_directions(from, to, id)
 <<JS
-requestRoutes('#{from}', '#{to}', '#{id}', 1);
+mapAndRouteService.requestRoutes('#{from}', '#{to}', '#{id}', 1);
 JS
       end
 
       def self.clear_directions
 <<JS
-clearDirections();
+mapAndRouteService.clearDirections();
 JS
       end
     end
