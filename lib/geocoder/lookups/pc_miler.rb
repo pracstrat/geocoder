@@ -139,7 +139,7 @@ var mapAndRouteService = new function() {
     routingLayer = new ALKMaps.Layer.Routing("Route Layer");
   }
 
-  this.requestRoutes = function (originCo, destCo, id, meter, dest) {
+  this.requestRoutes = function (originCo, destCo, id) {
     routeIds[routeIdIndex] = id;
     routingLayer.addRoute({
       stops: [
@@ -195,8 +195,8 @@ JS
           meter        = (mileage(originCo, destCo).last.to_f * 1609.344).round(2)
           dest         = "#{locations(address).first.city}, #{locations(address).first.state} #{locations(address).first.zipcode}"
 <<JS
-mapAndRouteService.loadedDirections();
-mapAndRouteService.requestRoutes([#{originCo[0].to_f}, #{originCo[1].to_f}], [#{destCo[0].to_f}, #{destCo[1].to_f}], '#{id}', #{meter}, '#{dest}');
+mapAndRouteService.loadedDirections("#{id}", #{meter}, "#{dest}");
+mapAndRouteService.requestRoutes([#{originCo[0].to_f}, #{originCo[1].to_f}], [#{destCo[0].to_f}, #{destCo[1].to_f}], '#{id}');
 JS
         end
       end
